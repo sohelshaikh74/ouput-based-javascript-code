@@ -70,15 +70,67 @@
     });
     console.log(mapMethod, forEachMthod);
 
-    vi)
-    var x = 20;
+    // vi)
+     var x = 20;
+     function foo() {
+     console.log(x);
+     var x = 10;
+     }
+     foo();
 
-function foo() {
-  console.log(x);
-  var x = 10;
-}
-foo();
-    
+    // or
+
+    function foo() {
+      x = 10;
+    }
+    foo();
+    console.log(x);
+
+    // imp
+    function foo() {
+    console.log(x);
+    x = 10;
+    }
+    foo();
+
+
+    // Very important 
+    function foo() {
+    x = 10;
+    console.log(x);
+    }
+    foo();
+    // if we use <script src="pract.js" ></script1>
+    // output : 10 
+    // if we change type <script src="pract.js" type="module"></script`>
+    // output : it will give us error because when we use type="moudle" it will active strict mode and we know in the strict mode undeclared variable are not going to globale variable
+    // same thing we use let or var or const x= 10 then it will git correct outpout :10
+
+
+    // vi)
+    foo();
+    var foo = 20;
+    function foo() {
+    console.log("calling foo");
+    }
+    foo();
+
+
+    // very very import 
+    for (var i = 0; i < 5; i++) {}
+    console.log(i);
+
+    for (let i = 0; i < 5; i++) {}
+    console.log(i); 
+
+
+    setTimeout(() => {
+    console.log("Timeout");
+    }, 0);
+    Promise.resolve().then(() => {
+    console.log("promise");
+    });
+   console.log("end");
   </script>
 </body>
 
